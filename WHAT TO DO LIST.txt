@@ -1,5 +1,12 @@
 WHAT TO DO LIST 
 
+THIS IS A README FILE BASED ON THE CLASS SEG2105 AND I AM CURRENTLY AL
+wdoiwapoddwONE BUT MAYBE SOMEONE WILL CHANGE IT IN DUE TIME 
+
+This is to symbolize that ive finally managed to create a working repo, you can also see that the other one has been changed , the other file 
+
+
+
 1. complete physics 
 	- Physics Lab#0
 	- Physics Lab review + complete lab #1
