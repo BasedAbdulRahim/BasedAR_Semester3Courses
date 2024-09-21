@@ -1,6 +1,8 @@
-Zuhair Zubair
+Zuhair Zubair - 300378419
 Based Abdul Rahim - 300379200
 
-Unique1Runtime - at first I was confused about this method due to being not sure if I had to randomize it, I thought that it was similar to part 1, then my group mate told me that this is different and that instead of trying to find out if we are looking for time complexity of sorting a unique array, you are trying to find the time complexity it takes to determine if the array implements into unique 1 contains unique elements
+arraySortRuntime - I found it confusing trying to understand what to do when making the arrays. After reading the index over 	a couple of times, I understood that I had to make multiple arrays and for each array randomize it once and test the 	sort method 10 times to find the worst case running time. After finishing that and printing the results including the 	worst case running time over n^2 and the worst case running time over nlogn, I was able to prove that the sorting 	algorithm is more similar to nlogn than n^2 because the worst case running time over nlogn converged to a constant 	number that was above 0, while the worst case over n^2 converged to exactly 0.
 
-Unique2Runtime - this is the same as part 1, just a different end time and also implement a randomize feature 
+unique1Runtime - at first I was confused about this method due to being not sure if I had to randomize it, I thought that it 	was similar to part 1, then my group mate told me that this is different and that instead of trying to find out if we 	are looking for time complexity of sorting a unique array, you are trying to find the time complexity it takes to 	determine if the array implements into unique 1 contains unique elements. The Runtime for Unique1 is O(n^2) which 	makes sense as it is two for loops that run until the end of the generated array. this meant that small numbers like 	n=50 did not have a large time required, sub second  time, but larger values such as n=200000 would take multiple 	seconds 
+
+unique2Runtime - this is the same as part 1, just a different end time and also implement a randomize feature. unlike 	unique1Runtime this was far faster with a time of O(nlogn) which meant that n=50 and n=200000 were much closer than 	before in run time 

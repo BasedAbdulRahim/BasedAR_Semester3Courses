@@ -30,13 +30,28 @@ public class AlgAnalysis {
 	 */
 	public static void arraySortRuntime(int count, int maxSize){
 		// add your code here (part 1)
-		long start = System.nanoTime();
-		interval = maxSize/count;
+		int interval = maxSize/count;
+		int[] currentArray;
 		if(interval==0) interval = 1;
+		for(int i = interval; i <= maxSize; i+= interval) {
+			currentArray = genArray(i);
+			long worstCase = 0;
+			for(int j = 0; j < 10; j++) {
+				randomizeArray(currentArray);
+				long start = System.nanoTime();
+				Arrays.sort(currentArray);
+				long end = System.nanoTime();
+				long timeNano = end - start;
+				if(timeNano > worstCase) {
+					worstCase = timeNano;
+				}
+			}
+			System.out.println("n:" + i + ", T(n): " + worstCase + " nanoseconds, T(n)/(n*n): " + ((double)worstCase/(double)(i*i)) + ", T(n)/(n log n): " + (double)worstCase/((double)i*(Math.log(i)/Math.log(2))));
+			
+			
+		}
 		
-		long end = System.nanoTime();
-		long timeNano = end - start;
-		double timeSec = nanoToSeconds(timeNano);
+		
 		
 	}
 	
@@ -47,9 +62,14 @@ public class AlgAnalysis {
 	 * @return time taken in nano seconds
 	 */
 	public static long unique1Runtime(int n){
-		// add your code here (part 2)
-		return 0;
-	}
+        // add your code here (part 2)
+        long start = System.nanoTime();
+        Unique1.unique1(genArray(n));
+        long end = System.nanoTime();
+        long time = end - start;
+
+        return time;
+    }
 	
 	/**
 	 * creates an array of size n, then tests the runtime of findDups2 using that array
@@ -57,10 +77,15 @@ public class AlgAnalysis {
 	 * @param  n size of array
 	 * @return time taken in nano seconds
 	 */
-	public static long unique2Runtime(int n){
-		// add your code here (part 2)
-		return 0;
-	}
+	public static long unique2Runtime(int n){// add your code here (part 2)
+    long start = System.nanoTime();
+    Unique2.unique2(randomizeArray(genArray(n)));
+    long end = System.nanoTime();
+    long time = end - start;
+    return time;
+
+
+}
 	
 	/**
 	 * Generates an array of ins of size n
