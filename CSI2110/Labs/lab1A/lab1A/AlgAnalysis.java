@@ -30,6 +30,14 @@ public class AlgAnalysis {
 	 */
 	public static void arraySortRuntime(int count, int maxSize){
 		// add your code here (part 1)
+		long start = System.nanoTime();
+		interval = maxSize/count;
+		if(interval==0) interval = 1;
+		
+		long end = System.nanoTime();
+		long timeNano = end - start;
+		double timeSec = nanoToSeconds(timeNano);
+		
 	}
 	
 	/**
