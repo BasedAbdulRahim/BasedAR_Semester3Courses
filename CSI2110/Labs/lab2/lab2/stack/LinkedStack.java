@@ -78,6 +78,7 @@ public class LinkedStack<E> implements Stack<E> {
    */
   public void push(E element) {
     // this is a dummy method now; it needs to be implemented <<<<<<<<<<<<<<<
+	head = new Node<E>(element, head);
   }
 
   /**
@@ -86,7 +87,14 @@ public class LinkedStack<E> implements Stack<E> {
    * @return top element in the stack (or null if empty)
    */
   public E top() {
-    return null; // this is a dummy method now; it needs to be implemented <<<<<<<<<<<<<<<
+	if (head == null) {
+		return null
+	}
+	else
+	{
+    return head.getElement();
+	}
+	
   }
 
   /**
@@ -95,7 +103,13 @@ public class LinkedStack<E> implements Stack<E> {
    * @return element removed (or null if empty)
    */
   public E pop() {
-    return null; // this is a dummy method now; it needs to be implemented <<<<<<<<<<<<<<<
+	  if(head == null) {
+		  return null;
+	  } else {
+		 E elem = head.getElement;
+		 head = head.getNext();
+		 return elem;
+	  }
   }
 
   /**
