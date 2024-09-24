@@ -106,7 +106,7 @@ public class LinkedStack<E> implements Stack<E> {
 	  if(head == null) {
 		  return null;
 	  } else {
-		 E elem = head.getElement;
+		 E elem = head.getElement();
 		 head = head.getNext();
 		 return elem;
 	  }

@@ -31,7 +31,7 @@ class BracketsBalance {
 
         // INSERT YOUR CODE HERE 
 
-        return false; // dummy answer for startup code
+        
 
     }
 
