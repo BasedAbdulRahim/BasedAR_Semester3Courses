@@ -88,7 +88,7 @@ public class LinkedStack<E> implements Stack<E> {
    */
   public E top() {
 	if (head == null) {
-		return null
+		return null;
 	}
 	else
 	{
