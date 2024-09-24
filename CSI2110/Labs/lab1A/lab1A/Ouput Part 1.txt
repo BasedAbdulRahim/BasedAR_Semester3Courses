@@ -1,0 +1,28 @@
+Enter 0 to test Arrays.sort(), 1 for unique, any other number to exit
+0
+Enter number of arrays to test
+20
+Enter largest array size
+2000
+n:100, T(n): 27900 nanoseconds, T(n)/(n*n): 2.79, T(n)/(n log n): 41.99368439512537
+n:200, T(n): 268600 nanoseconds, T(n)/(n*n): 6.715, T(n)/(n log n): 175.69665973001256
+n:300, T(n): 80700 nanoseconds, T(n)/(n*n): 0.8966666666666666, T(n)/(n log n): 32.68998991443201
+n:400, T(n): 60500 nanoseconds, T(n)/(n*n): 0.378125, T(n)/(n log n): 17.497977370206787
+n:500, T(n): 86700 nanoseconds, T(n)/(n*n): 0.3468, T(n)/(n log n): 19.340193171570967
+n:600, T(n): 36600 nanoseconds, T(n)/(n*n): 0.10166666666666667, T(n)/(n log n): 6.609730025666194
+n:700, T(n): 96700 nanoseconds, T(n)/(n*n): 0.1973469387755102, T(n)/(n log n): 14.616418521210564
+n:800, T(n): 75000 nanoseconds, T(n)/(n*n): 0.1171875, T(n)/(n log n): 9.721215057043478
+n:900, T(n): 87600 nanoseconds, T(n)/(n*n): 0.10814814814814815, T(n)/(n log n): 9.9180256250713
+n:1000, T(n): 150400 nanoseconds, T(n)/(n*n): 0.1504, T(n)/(n log n): 15.091637115954256
+n:1100, T(n): 108000 nanoseconds, T(n)/(n*n): 0.08925619834710743, T(n)/(n log n): 9.717808701843746
+n:1200, T(n): 122500 nanoseconds, T(n)/(n*n): 0.08506944444444445, T(n)/(n log n): 9.97997290031
+n:1300, T(n): 116400 nanoseconds, T(n)/(n*n): 0.06887573964497042, T(n)/(n log n): 8.655829486658785
+n:1400, T(n): 175900 nanoseconds, T(n)/(n*n): 0.08974489795918367, T(n)/(n log n): 12.02184663561247
+n:1500, T(n): 165700 nanoseconds, T(n)/(n*n): 0.07364444444444444, T(n)/(n log n): 10.470032966737918
+n:1600, T(n): 126000 nanoseconds, T(n)/(n*n): 0.04921875, T(n)/(n log n): 7.39863434792111
+n:1700, T(n): 119400 nanoseconds, T(n)/(n*n): 0.04131487889273357, T(n)/(n log n): 6.544889208362126
+n:1800, T(n): 144400 nanoseconds, T(n)/(n*n): 0.0445679012345679, T(n)/(n log n): 7.418517242366507
+n:1900, T(n): 148800 nanoseconds, T(n)/(n*n): 0.04121883656509695, T(n)/(n log n): 7.190354822281627
+n:2000, T(n): 131200 nanoseconds, T(n)/(n*n): 0.0328, T(n)/(n log n): 5.982244251490076
+__________________________________________________________________________________________________________________________
+The T(n)/n^2 seems to converge to 0, while the T(n)/nlogn seems to converge to about a constant of 6
