@@ -32,12 +32,12 @@ class BracketsBalance {
         // INSERT YOUR CODE HERE 
 		final String opening = "({["; // opening delimiters
 		final String closing = ")}]"; // respective closing delimiters
-		Stack<Character> buffer = new LinkedStack<Character>( );
+		Stack<Character> buffer = new ArrayStack<Character>( );
 		// above could use another concrete data structure: ArrayStack<Character>()
-		for (char c : expression.toCharArray( )) {
-		if (opening.indexOf(c) != −1) // this is a left delimiter
+		for (char c : exp.toCharArray( )) {
+		if (opening.indexOf(c) != -1) // this is a left delimiter
 			buffer.push(c);
-		else if (closing.indexOf(c) != −1) { // this is a right delimiter
+		else if (closing.indexOf(c) != -1) { // this is a right delimiter
 			if (buffer.isEmpty( )) // nothing to match with
 				return false;
 			if (closing.indexOf(c) != opening.indexOf(buffer.pop( )))
