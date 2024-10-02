@@ -5,3 +5,6 @@ abc //true
 
 (() //false
 10^100*log_10[n)/log_10(2) //false
+
+({[]()}0) //true
+()(){}}() // false

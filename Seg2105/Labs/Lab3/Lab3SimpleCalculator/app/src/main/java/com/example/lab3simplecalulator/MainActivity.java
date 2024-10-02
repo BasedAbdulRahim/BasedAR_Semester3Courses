@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
                 requiresCleaning = false;
                 curText.setText("");
             }
-
 //Figuring out which button was pressed and updating the represented text field object
                 switch (pressID) {
                     case R.id.button00:
