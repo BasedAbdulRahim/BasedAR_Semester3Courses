@@ -17,8 +17,8 @@ public class SequenceAlgs<E> {
 	public boolean isPalindrome (Sequence<E> S) {
 		
 		// ***** add your code here  *******************
-		for(int i = 0; i < S.size()/2; i++{
-			if(S.positionAtIndex(i).getElement().equals(S.positionAtIndex(size() - 1 - i).getElement()){
+		for(int i = 0; i < S.size()/2; i++){
+			if(!(S.positionAtIndex(i).getElement().equals(S.positionAtIndex(S.size() - 1 - i).getElement()))){
 				return false;
 			}
 		}
@@ -40,10 +40,10 @@ public class SequenceAlgs<E> {
 	public void inplaceReverse(Sequence<E> S) {
 		
 		// ***** add your code here  *******************
-		for(int i = 0; i < S.size()/2; i++{
-			int index = indexAtPosition();
-			S.positionAtIndex(i);
-		}
+		// for(int i = 0; i < S.size()/2; i++){
+			// int index = s.indexAtPosition();
+			// S.positionAtIndex(i);
+		// }
 	}
 	
 	/**
