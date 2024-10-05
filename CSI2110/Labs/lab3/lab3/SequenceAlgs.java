@@ -40,10 +40,14 @@ public class SequenceAlgs<E> {
 	public void inplaceReverse(Sequence<E> S) {
 		
 		// ***** add your code here  *******************
-		// for(int i = 0; i < S.size()/2; i++){
-			// int index = s.indexAtPosition();
-			// S.positionAtIndex(i);
-		// }
+		int n = S.size();
+		 for(int i = 0; i < S.size()/2; i++){
+			 int other = n - 1 - i; 
+			 E temp1 = S.get(i);
+			 E temp2 = S.get(other);
+			 S.set(i,temp2);
+			 S.set(other,temp1);
+		 }
 	}
 	
 	/**
