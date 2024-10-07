@@ -100,7 +100,6 @@ public class LinkedSequence<E> extends LinkedPositionalList<E> implements Sequen
 		Position<E> pos = positionAtIndex(i);
 		addBefore(pos,e);
 		}
-		
 	}
 	
 	/**
