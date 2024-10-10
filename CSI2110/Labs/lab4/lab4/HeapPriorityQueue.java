@@ -65,8 +65,7 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
 			upHeap(tail);
 			return entry; 
 		} else {
-			//throw new illegalArgumentException();
-			return null;
+			throw new IllegalArgumentException("Array is full");
 		}
     }
     
