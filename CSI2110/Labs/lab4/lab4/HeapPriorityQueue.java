@@ -11,12 +11,15 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * Default constructor
     */
     public HeapPriorityQueue(){
+		this(100);
     }
     
     /**
     * HeapPriorityQueue constructor with max storage of size elements
     */
     public HeapPriorityQueue(int size){
+		tail = -1;
+		storage = new Entry[size];
     }
     
     /****************************************************
@@ -31,7 +34,7 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @return number of items
     */
     public int size(){
-        return -1;
+        return tail + 1;
     }
 
     /**
@@ -40,7 +43,10 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @return true if the priority queue is empty, false otherwise
     */
     public boolean isEmpty(){
-        return true;
+        if (tail == -1) 
+            return true;
+        else 
+            return false;
     }
     
     /**
@@ -52,7 +58,15 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @throws IllegalArgumentException if the heap is full
     */
     public Entry<K,V> insert(K key, V value) throws IllegalArgumentException{
-        return null;
+        if(size() < storage.length() - 1){
+			tail++;
+			Entry<K,V> entry =  new Entry<K,V>(key,value);
+			storage[tail] = entry;
+			upHeap(tail);
+			return entry; 
+		} else {
+			throw illegalArgumentException("Array full");
+		}
     }
     
     /**
@@ -61,7 +75,7 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @return entry having a minimal key (or null if empty)
     */
     public Entry<K,V> min(){
-        return null;
+        return storage[0];
     } 
     
     /**
@@ -70,7 +84,11 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @return the removed entry (or null if empty)
     */ 
     public Entry<K,V> removeMin(){
-        return null;
+		Entry<K,V> entry = min();
+		swap(0,tail);
+		storage[tail] = null;
+		downHeap(0);
+		return entry;
     }  
     
     
@@ -84,8 +102,11 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * Algorithm to place element after insertion at the tail.
     * O(log(n))
     */
-    private void upHeap(int location){
-         return;          
+    private void upHeap(int location) {
+        if(storage[location].getKey() < sortage[parent(location)].getKey()) {
+			swap(location, parent(location));
+			upHeap(parent(location));
+		} 			 
     }
     
     /**
@@ -93,7 +114,11 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * O(log(n))
     */
     private void downHeap(int location){
-         return;            
+		int lc = location*2 + location%2*2
+        if(storage[location].getKey() < sortage[parent(location)].getKey()) {
+			swap(location, parent(location));
+			upHeap(parent(location));
+		}            
     }
     
     /**
@@ -102,7 +127,7 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * O(1)
     */
     private int parent(int location){
-        return -1;
+        return location/2 + location%2/2;
     }
     
    
@@ -110,8 +135,10 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * Inplace swap of 2 elements, assumes locations are in array
     * O(1)
     */
-    private void swap(int location1, int location2){
-        return;  
+    private void swap(int location1, int location2){  
+		Entry<K,V> temp = storage[0];
+		storage[0] = storage[tail];
+		storage[tail] = temp;
     }
     
 }
