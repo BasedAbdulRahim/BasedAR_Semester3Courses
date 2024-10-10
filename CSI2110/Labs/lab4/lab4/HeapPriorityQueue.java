@@ -58,14 +58,15 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * @throws IllegalArgumentException if the heap is full
     */
     public Entry<K,V> insert(K key, V value) throws IllegalArgumentException{
-        if(size() < storage.length() - 1){
+        if(size() < storage.length - 1){
 			tail++;
 			Entry<K,V> entry =  new Entry<K,V>(key,value);
 			storage[tail] = entry;
 			upHeap(tail);
 			return entry; 
 		} else {
-			throw illegalArgumentException("Array full");
+			//throw new illegalArgumentException();
+			return null;
 		}
     }
     
@@ -103,7 +104,7 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * O(log(n))
     */
     private void upHeap(int location) {
-        if(storage[location].getKey() < sortage[parent(location)].getKey()) {
+        if(storage[location].getKey().compareTo(storage[parent(location)].getKey()) < 0) {
 			swap(location, parent(location));
 			upHeap(parent(location));
 		} 			 
@@ -114,10 +115,14 @@ public class HeapPriorityQueue<K extends Comparable,V> implements PriorityQueue<
     * O(log(n))
     */
     private void downHeap(int location){
-		int lc = location*2 + location%2*2
-        if(storage[location].getKey() < sortage[parent(location)].getKey()) {
-			swap(location, parent(location));
-			upHeap(parent(location));
+		int lc = location*2 + 1;
+		int rc = location*2 + 2;
+		int lowest = lc;
+		if(storage[rc].getKey().compareTo(storage[lowest].getKey())< 0) 
+			lowest = rc;
+        if(storage[location].getKey().compareTo(storage[lowest].getKey()) < 0) {
+			swap(location, lowest);
+			upHeap(lowest);
 		}            
     }
     
