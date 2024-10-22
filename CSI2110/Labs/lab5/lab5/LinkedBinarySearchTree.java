@@ -97,6 +97,11 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      */
     private void preorderRecursive(Node<E> curr){
         //Implement Here
+		System.out.print(curr.elem + ", ");
+		if(curr.left!=null)
+			preorderRecursive(curr.left);
+		if(curr.right!=null)
+			preorderRecursive(curr.right);
     }
     
     /**
@@ -112,7 +117,12 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      * @param curr
      */
     private void inorderRecursive(Node<E> curr){
-        //Implement Here
+        
+		if(curr.left!=null)
+			preorderRecursive(curr.left);
+		System.out.print(curr.elem + ", ");
+		if(curr.right!=null)
+			preorderRecursive(curr.right);
     }
     
     
@@ -129,7 +139,13 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      * @param curr
      */
     private void postorderRecursive(Node<E> curr){
-        //Implement Here       
+       if(curr.left!=null)
+			preorderRecursive(curr.left);
+		
+		if(curr.right!=null)
+			preorderRecursive(curr.right);    
+
+System.out.print(curr.elem + ", ");		
     }
 
     
