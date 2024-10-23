@@ -97,6 +97,13 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      */
     private void preorderRecursive(Node<E> curr){
         //Implement Here
+		System.out.print(curr.elem + ", ");
+		if(curr.left != null) {
+			preorderRecursive(curr.left);
+		}
+		if(curr.right != null) {
+			preorderRecursive(curr.right);
+		}
     }
     
     /**
@@ -113,6 +120,13 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      */
     private void inorderRecursive(Node<E> curr){
         //Implement Here
+		if(curr.left != null) {
+			preorderRecursive(curr.left);
+		}
+		System.out.print(curr.elem + ", ");
+		if(curr.right != null) {
+			preorderRecursive(curr.right);
+		}
     }
     
     
@@ -129,7 +143,14 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
      * @param curr
      */
     private void postorderRecursive(Node<E> curr){
-        //Implement Here       
+        //Implement Here    
+		if(curr.left != null) {
+			preorderRecursive(curr.left);
+		}
+		if(curr.right != null) {
+			preorderRecursive(curr.right);
+		}
+		System.out.print(curr.elem + ", ");
     }
 
     
@@ -174,16 +195,43 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
         
         public PreorderIterator(){
             //Implement Here
+			next = root;
+			
         }
         
         public boolean hasNext(){
-            return false;
+            
             //Implement Here
+			if(next == null) 
+				return false;
+			else
+				return true;
         }
         
         public E next(){
-            return null;
             //Implement Here
+			if(next.left!= null)
+				next = next.left;
+				return next.elem; 
+			else
+			if(next.right!= null)
+				next = next.right;
+				return next.elem;
+			else
+				parent = next.parent;
+				child = next;
+				while(parent != null && (parent.right == child || parent.right == null)) {
+					child = parent;
+					parent = parent.parent;
+				}
+				if(parent == null){
+					next = null;
+					return next;
+				}
+				else {
+					next = parent.right;
+					return next.elem;
+				}
         }
         
         public void remove(){
@@ -200,16 +248,30 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
         
         public InorderIterator(){
             //Implement Here
+			while(next.left != null) {
+				next = next.left;
+			}
         }
         
         public boolean hasNext(){
-            return false;
             //Implement Here
+			if(next == null) 
+				return false;
+			else
+				return true;
         }
         
         public E next(){
-            return null;
             //Implement Here
+			if(next.right != null) {
+				next = next.right;
+				while (next.left != null) 
+					next = next.left;
+				return next.elem;
+			}
+			else {
+				next = next;
+			}
         }
         
         public void remove(){
