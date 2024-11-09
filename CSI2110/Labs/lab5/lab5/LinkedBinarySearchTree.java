@@ -210,14 +210,15 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
         
         public E next(){
             //Implement Here
-			if(next.left!= null)
+			if(next.left!= null) {
 				next = next.left;
 				return next.elem; 
-			else
-			if(next.right!= null)
+			}
+			else if(next.right!= null) {
 				next = next.right;
 				return next.elem;
-			else
+			}
+			else {
 				parent = next.parent;
 				child = next;
 				while(parent != null && (parent.right == child || parent.right == null)) {
@@ -232,6 +233,7 @@ public class LinkedBinarySearchTree<E extends Comparable> implements Iterable<E>
 					next = parent.right;
 					return next.elem;
 				}
+			}
         }
         
         public void remove(){
